@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+   $(document).ready(function(){
+       
+       let vr_num =1;
+       $('#vr_nextbt').click(function(){
+           vr_num = vr_num+1
+           if(vr_num>36){vr_num = 1}
+           $('#vr_img').attr({'src':'vr/' +vr_num+ '.jpg'})
+       })
+       $('#vr_prevbt').click(function(){
+           vr_num = vr_num-1
+           if(vr_num<1){ vr_num= 36}
+           $('#vr_img').attr({'src':'vr/' +vr_num+ '.jpg'})
+           
+       })
+       
+       
+       $('#color_bt>li').click(function(){
+           $(this).children(".color_bt_click").show()
+           $(this).siblings('li').children(".color_bt_click").hide()
+           $("#color_car").attr({"src":"color/car" + ($(this).index()+1) +".webp"})
+        })
+    $("#feel_bt1").click(function(){
+        $("#popup_wrap").show()
+        $("#popup_box1_img").attr({"src":"images/popup1-feel.jpg"})
+        $("#popup_box2_top>h3").text("셀렉터블 전자제어 파워 스티어링(Selectable EPAS)")
+        $("#popup_box2_content").html(" <p>291마력(ps/5,600rpm)의 2.3L 에코부스트Ⓡ 엔진은 토크(최대 44.9kg·m/3,000rpm)를 획기적으로 높여 역동적 가속에 자신감을 더하였습니다.</p><p>업그레이드된 5.0L V8 엔진은 446마력(ps/7,000rpm)과 최대 토크54.1kg·m/4,250rpm로 기존 머스탱 GT보다 월등한 가속 성능을 발휘합니다.</p")           
+        })
+    $("#feel_bt2").click(function(){
+        $("#popup_wrap").show()
+        $("#popup_box1_img").attr({"src":"images/popup2-feel.jpg"})
+        $("#popup_box2_top>h3").text("셀렉터블 전자제어 파워 스티어링(Selectable EPAS)")
+        $("#popup_box2_content").html("<p>운전자의 기분과 운전 환경에 따라 컴포트(Comfort), 노멀(Normal), 스포트(Sport)의 세 가지 스티어링 휠의 모드를 자유롭게 선택할 수 있습니다. 여유로운 드라이브부터 급커브까지, 상황에 맞는 가장 적절한  조향 응답성으로 안정적 드라이브를 만끽할 수 있습니다.</p>")
+    })
+    $("#feel_bt3").click(function(){
+        $("#popup_wrap").show()
+        $("#popup_box1_img").attr({"src":"images/popup3-feel.jpg"})
+        $("#popup_box2_top>h3").text("셀렉터블 드라이브 모드")
+        $("#popup_box2_content").html("<p>드라이브 모드를 선택하여 주행 성능을 완벽하게 컨트롤해 보십시오.</p><ul><li>- 노멀(Normal) : 자신감 넘치는 데일리 주행</li><li>- 스포트 플러스(Sport+) : 강화된 스로틀 반응성과 박진감 넘치는 주행</li><li>- 트랙(Track) 모드 : 트랙과 같은 도로 코스 타입의 주행</li><li>- 드래그 스트립(Drag Strip) : 최대의 직선 가속도를 내기위한 주행</li><li>- 스노우/웨트(Snow/Wet) : 미끄러운 도로에서 접지력을 유지하도록 돕는 주행</li></ul>")
+    })
+    $("#popup_closebt").click(function(){
+        $("#popup_wrap").hide()
+    })
+       
+   })
+  </script>
+  <style>
+   * { margin: 0; padding: 0; list-style: none; }
+   #wrap { width: 1440px; border: 1px solid #ddd; margin: auto;}
+   #feel { width: 100%; height: 800px; background-color: #000; color: #fff; text-align: center;}
+   #feel_top { width: 100%; height: 315px; overflow: hidden;}
+   #feel_top>h2 { margin-top: 50px; font-size: 30px;}
+   
+   #feel_top>p { margin-top: 20px; font-size: 16px; }
+   #feel_top>button {margin-top: 20px; width: 300px; height: 70px; color: #fff; font-size: 20px; background-color: rgb(76, 143, 206); border: none;}
+   #feel_top>button:hover { background-color: #fff; color: #000;}
+   #feel_top>h5 {margin-top: 20px; font-size: 10px;}
+   #fell_imgbox { width: 100%; height: 485px; overflow: hidden; position: relative;}
+   #feel_imgbox>button { width: 40px; height: 40px; border-radius: 40px; border: 3px solid rgba(0,0,0,0.5);position: absolute;}
+   #feel_bt1 {  left: 470px; bottom: 370px; }
+   #feel_bt2 {  left: 0; right: 0; bottom: 470px; margin: auto;}
+   #feel_bt3 {  right: 300px; bottom: 370px;}
+
+   
+   #color { text-align: center;}
+   #color>h2 { font-size: 35px; line-height: 100px; }
+   #color>h4 { width: 85px; line-height: 50px; margin: auto; margin-top: 30px; border-bottom: 5px solid #000;}
+   #color>p { font-size: 22px; margin-top: 20px;}
+   #color_car { width: 100%; }
+   #color_bt { margin-bottom: 50px;}
+   #color_bt>li { display: inline-block; position: relative;}
+   #color_bt>li>.color_bt_bg { vertical-align: top;}
+   #color_bt>li>.color_bt_click { position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; display: none;}
+   #color_bt>li:nth-child(1)>.color_bt_click {display: inline;}
+
+   #popup_wrap { width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); left: 0; top: 0; position: fixed; z-index: 99999; display: none;}
+   #popup_box { width: 1130px; height: 650px; border: 1px solid yellow; margin: auto; margin-top: 50px;}
+   #popup_box1 { width: 1130px; height: 570px; background-color: green; position: relative;}
+   #popup_box1_img { width: 1130px; height: 570px;}
+   #popup_closebt { position: absolute; width: 30px; right: 0; top: 0; padding: 15px; background-color: rgba(0,0,0,0.5); }
+   #popup_box2 { width: 1130px; height: 80px; }
+    #popup_box2_top { width: 1128px; height: 78px; background-color: #fff; line-height: 78px; overflow: hidden; border: 1px solid #000;}
+    #popup_box2_top>h3 { float: left; margin-left: 30px; }
+    #popup_box2_top>h5 {width: 150px; float: right; text-align: center; border-left: 1px solid #000;color: #ddd}
+    #popup_box2_content { padding: 30px; background-color: #fff;}
+
+    #vr { width: 100%; margin-top: 50px; position: relative;}
+    #vr_img { vertical-align: top;}
+    #vr_prevbt {position: absolute; left: 20px; top: 0; bottom: 0; margin: auto;}
+    #vr_nextbt { position: absolute; right: 20px; top: 0; bottom: 0; margin: auto;}
+  </style>
+ </head>
+ <body>
+      <div id="popup_wrap">
+        <div id="popup_box">
+            <div id="popup_box1"> 
+                <img src="images/popup1-feel.jpg" alt="" id="popup_box1_img">
+                <img src="images/close.png" alt="" id="popup_closebt">
+            </div>
+            <div id="popup_box2">
+                <div id="popup_box2_top">
+                    <h3>엔진 토크</h3>
+                    <h5>닫기 ▼</h5>
+                </div>
+                <div id="popup_box2_content">
+                   >
+                         
+                </div>
+            </div>
+        </div>
+      </div>  
+        <div id="wrap">
+           <div id="feel">
+            <div id="feel_top">
+                <h2>The Feel</h2>
+                <p>언제든지 원하실 때, 가장 첨단의 머스탱과 함께 포효하십시오. <br>
+                    머스탱의 10단 자동변속기는 엔진과의 완벽한 조화를 이루어 뛰어난 응답성과 전천후 성능을 발휘합니다.</p>
+                <button>HANDLING 자세히 보기</button>
+                <h5>플러스 버튼(+)을 클릭해 보세요</h5>
+            </div>
+            <div id="feel_imgbox">
+                <img src="images/ford1.jpeg" alt="">
+                <button id="feel_bt1">+</button>
+                <button id="feel_bt2">+</button>
+                <button id="feel_bt3">+</button>
+            </div> 
+        </div>
+            <div id="color">
+                <h2>COLOR</h2>
+                <h4>COLORLZER<sup>2</sup></h4>
+                <p>Rapid Red Metallic Tinted Clearcoat</p>
+                <img src="color/car1.webp" alt="" id="color_car">
+                <ul id="color_bt">
+                    <li><img src="color/car_bt1.webp" alt="" class="color_bt_bg"></li>
+                    <li><img src="color/car_bt2.png" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                    <li><img src="color/car_bt3.webp" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                    <li><img src="color/car_bt4.webp" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                    <li><img src="color/car_bt5.png" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                    <li><img src="color/car_bt6.webp" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                    <li><img src="color/car_bt7.webp" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                    <li><img src="color/car_bt8.webp" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                    <li><img src="color/car_bt8.webp" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                    <li><img src="color/car_bt10.png" alt="" class="color_bt_bg"><img src="color/click.png" alt="" class="color_bt_click"></li>
+                </ul>
+            </div>
+            <div id="vr">
+                <img src="vr/1.jpg" alt="" id="vr_img">
+                <img src="vr/vr_left_arrow.png" alt="" id="vr_prevbt">
+                <img src="vr/vr_right_arrow.png" alt="" id="vr_nextbt">
+            </div>
+
+        </div>
+ </body>
+</html>
